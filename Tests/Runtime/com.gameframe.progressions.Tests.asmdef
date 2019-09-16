@@ -1,0 +1,1 @@
+{ "name": "com.gameframe.progressions.Tests", "references": [ "com.gameframe.progressions" ], "optionalUnityReferences": ["TestAssemblies"], "includePlatforms": [], "excludePlatforms": [] }
