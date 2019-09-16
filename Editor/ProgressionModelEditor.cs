@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEditor;
 
-namespace GameJam.Progressions
+namespace Gameframe.Progressions
 {
   [CustomEditor(typeof(FloatProgressionModel),true)]
   public class ProgressionModelEditor : UnityEditor.Editor
