@@ -2,20 +2,20 @@
 
 namespace Gameframe.Progressions
 {
-  [CreateAssetMenu(menuName ="GameJam/Progressions/Calculated/Float")]
+  [CreateAssetMenu(menuName ="Gameframe/Progressions/Calculated/Float")]
   public class CalculatedFloatProgressionModel : FloatProgressionModel
   {
     [SerializeField]
-    float startValue = 0;
+    private float startValue = 0;
 
     [System.Serializable]
     public class ProgressionSegment
     {
       [SerializeField]
-      float exponent = 1;
+      private float exponent = 1;
 
       [SerializeField]
-      float multiplier = 1;
+      private float multiplier = 1;
 
       public float Get(int level)
       {
@@ -24,18 +24,12 @@ namespace Gameframe.Progressions
     }
 
     [SerializeField]
-    ProgressionSegment[] segments;
+    private ProgressionSegment[] segments;
 
     [SerializeField, HideInInspector]
-    AnimationCurve curve;
+    private AnimationCurve curve;
 
-    public override int Count
-    {
-      get
-      {
-        return int.MaxValue;
-      }
-    }
+    public override int Count => int.MaxValue;
 
     public override float Get(int level)
     {
@@ -52,7 +46,7 @@ namespace Gameframe.Progressions
       return Mathf.Round(startValue + sum);
    }
 
-    void OnValidate()
+    private void OnValidate()
     {
       curve = new AnimationCurve();
       for ( int i = 0; i < 100; i++ )

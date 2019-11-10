@@ -2,20 +2,20 @@
 
 namespace Gameframe.Progressions
 {
-  [CreateAssetMenu(menuName = "GameJam/Progressions/Calculated/Int")]
+  [CreateAssetMenu(menuName = "Gameframe/Progressions/Calculated/Int")]
   public class CalculatedIntProgressionModel : IntProgressionModel
   {
     [SerializeField]
-    int maxLevel = 100;
+    private int maxLevel = 100;
 
     [SerializeField]
-    float multiplier = 1f;
+    private float multiplier = 1f;
 
     [SerializeField]
-    float exponent = 1f;
+    private float exponent = 1f;
 
     [SerializeField]
-    AnimationCurve curve = AnimationCurve.Linear(0, 0, 100, 100);
+    private AnimationCurve curve = AnimationCurve.Linear(0, 0, 100, 100);
 
     public override int Count
     {
@@ -38,7 +38,7 @@ namespace Gameframe.Progressions
       return Mathf.FloorToInt(Mathf.Pow(index, exponent) * multiplier);
     }
 
-    void OnValidate()
+    private void OnValidate()
     {
       Debug.Log("Validate");
       curve = new AnimationCurve();

@@ -2,11 +2,11 @@
 
 namespace Gameframe.Progressions
 {
-  [CreateAssetMenu(menuName ="GameJam/Progressions/Curve")]
+  [CreateAssetMenu(menuName ="Gameframe/Progressions/Curve")]
   public class CurveProgressionModel : FloatProgressionModel
   {
     [SerializeField]
-    AnimationCurve curve;
+    private AnimationCurve curve;
 
     public override int Count
     {

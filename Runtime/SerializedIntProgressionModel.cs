@@ -3,11 +3,11 @@ using UnityEngine;
 
 namespace Gameframe.Progressions
 {
-  [CreateAssetMenu(menuName = "GameJam/Progressions/Serialized/Int")]
+  [CreateAssetMenu(menuName = "Gameframe/Progressions/Serialized/Int")]
   public class SerializedIntProgressionModel : IntProgressionModel
   {
     [SerializeField]
-    List<int> progression = new List<int>();
+    private List<int> progression = new List<int>();
 
     public override int Count => progression.Count;
 
