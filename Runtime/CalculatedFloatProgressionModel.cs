@@ -24,7 +24,7 @@ namespace Gameframe.Progressions
     }
 
     [SerializeField]
-    private ProgressionSegment[] segments;
+    private ProgressionSegment[] segments = new ProgressionSegment[0];
 
     [SerializeField, HideInInspector]
     private AnimationCurve curve;

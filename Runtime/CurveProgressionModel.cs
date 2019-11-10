@@ -6,7 +6,7 @@ namespace Gameframe.Progressions
   public class CurveProgressionModel : FloatProgressionModel
   {
     [SerializeField]
-    private AnimationCurve curve;
+    private AnimationCurve curve = new AnimationCurve();
 
     public override int Count
     {
