@@ -6,7 +6,9 @@
   </a>
 </p>
 
-## Install
+> ScriptableObjects for calculating numerical progressions. Indended for use with role playing game property scaling.
+
+## Quick Package Install
 
 #### Using UnityPackageManager (for Unity 2018.3 or later)
 
