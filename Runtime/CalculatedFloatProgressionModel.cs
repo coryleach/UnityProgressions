@@ -26,6 +26,9 @@ namespace Gameframe.Progressions
   {
     [SerializeField] 
     private int maxLevel = 100;
+
+    [SerializeField] 
+    private float scale = 1.0f;
     
     [SerializeField]
     private ProgressionSegment[] segments = new ProgressionSegment[0];
@@ -41,7 +44,7 @@ namespace Gameframe.Progressions
       {
         return 0;
       }
-      return segments[GetSegmentIndex(level)].Get(level);
+      return segments[GetSegmentIndex(level)].Get(level) * scale;
     }
 
     private int GetSegmentIndex(int level)

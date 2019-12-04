@@ -10,12 +10,14 @@ namespace Gameframe.Progressions
     private SerializedProperty curve;
     private SerializedProperty segments;
     private SerializedProperty maxLevel;
+    private SerializedProperty scale;
     
     private void OnEnable()
     {
       curve = serializedObject.FindProperty("curve");
       segments = serializedObject.FindProperty("segments");
       maxLevel = serializedObject.FindProperty("maxLevel");
+      scale = serializedObject.FindProperty("scale");
     }
 
     public override void OnInspectorGUI()
@@ -25,11 +27,13 @@ namespace Gameframe.Progressions
       serializedObject.Update();
 
       EditorGUILayout.PropertyField(maxLevel);
+      EditorGUILayout.PropertyField(scale);
       
       int segmentCount = segments.arraySize;
       if (segmentCount < 1)
       {
         segmentCount = 1;
+        segments.arraySize = segmentCount;
       }
 
       EditorGUI.BeginChangeCheck();
@@ -73,10 +77,10 @@ namespace Gameframe.Progressions
 
       EditorGUILayout.BeginVertical("Box");
 
-      var progressionModel = target as FloatProgressionModel;
+      var progressionModel = (FloatProgressionModel)target;
       for ( int i = 0; i < maxLevel.intValue; i++ )
       {
-        EditorGUILayout.LabelField(string.Format("{0}:{1}",i,progressionModel.Get(i)));
+        EditorGUILayout.LabelField($"{i}: {progressionModel.Get(i)}");
       }
 
       EditorGUILayout.EndVertical();
